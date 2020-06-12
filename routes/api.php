@@ -18,5 +18,15 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::post('register', 'AuthController@register');
-Route::post('login', 'AuthController@login');
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'users'
+], function () {
+    Route::post('register', 'AuthController@register');
+    Route::post('login', 'AuthController@login');
+    Route::group([
+        'middleware' => 'auth:api'
+    ], function(){
+        Route::get('me', 'AuthController@me');
+    });
+});
