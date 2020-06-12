@@ -48,6 +48,16 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => 'Unauthorised',
-        ],401);
+        ], 401);
+    }
+
+    public function me()
+    {
+        $user = Auth::user();
+
+        return response()->json([
+            'user' => $user,
+        ]);
+
     }
 }
