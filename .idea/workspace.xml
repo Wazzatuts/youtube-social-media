@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d856b20b-5cfd-439a-9430-04f63300fc5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/StatusUpdateRepositoryContract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/StatusUpdateRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/StatusUpdateService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/ResponseHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/StatusUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/StatusUpdate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StatusUpdatesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatusUpdatesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
