@@ -34,4 +34,5 @@ Route::group([
     'prefix' => 'user'
 ], function () {
     Route::get('me', 'UserController@me');
+    Route::post('status/new', 'StatusUpdatesController@store');
 });

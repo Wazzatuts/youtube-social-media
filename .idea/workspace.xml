@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d856b20b-5cfd-439a-9430-04f63300fc5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/StatusUpdateRepositoryContract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/StatusUpdateRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/StatusUpdateService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/StatusUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/StatusUpdate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -143,7 +147,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../user_service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories/Contracts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -151,6 +155,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Repositories\Contracts" />
+      <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Repositories" />
+      <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Services" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -194,6 +205,8 @@
       <workItem from="1591969951221" duration="5452000" />
       <workItem from="1592156207720" duration="47000" />
       <workItem from="1592164200219" duration="1629000" />
+      <workItem from="1592210659209" duration="1653000" />
+      <workItem from="1592213774631" duration="6961000" />
     </task>
     <servers />
   </component>

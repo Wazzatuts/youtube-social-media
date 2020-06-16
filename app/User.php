@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function status_updates()
     {
-        return $this->hasMany("StatusUpdate");
+        return $this->hasMany(StatusUpdate::class);
     }
 
 }
