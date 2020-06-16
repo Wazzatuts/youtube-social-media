@@ -13,7 +13,6 @@ class StatusUpdatesController extends Controller
     {
         $this->statusUpdateService = $statusUpdateService;
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +50,7 @@ class StatusUpdatesController extends Controller
                 'data' => $newStatus,
             ]
         ]);
-    }-
+    }
 
     /**
      * Display the specified resource.

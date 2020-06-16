@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ResponseHelper;
 use App\Services\UserService;
 use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
@@ -9,13 +10,31 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    /**
+     * @var UserService
+     */
     protected $userService;
 
-    public function __construct(UserService $userService)
+    /**
+     * @var ResponseHelper
+     */
+    protected $responseHelper;
+
+    /**
+     * AuthController constructor.
+     * @param UserService $userService
+     * @param ResponseHelper $responseHelper
+     */
+    public function __construct(UserService $userService, ResponseHelper $responseHelper)
     {
         $this->userService = $userService;
+        $this->responseHelper = $responseHelper;
     }
 
+    /**
+     * @param RegisterUserRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function register(RegisterUserRequest $request)
     {
         $user = $this->userService->registerUser($request->all());
@@ -31,6 +50,10 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function login(Request $request)
     {
         $newUser = $this->userService->loginUser($request->all());
@@ -46,18 +69,16 @@ class AuthController extends Controller
             ]);
         }
 
-        return response()->json([
-            'message' => 'Unauthorised',
-        ], 401);
+        return $this->responseHelper->errorResponse(false, 'Unauthorised', 401);
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function me()
     {
         $user = Auth::user();
 
-        return response()->json([
-            'user' => $user,
-        ]);
-
+        return $this->responseHelper->successResponse(true, 'User', $user);
     }
 }
