@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ResponseHelper;
+use App\Mail\RegisterUserMail;
 use App\Services\UserService;
 use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -39,15 +41,12 @@ class AuthController extends Controller
     {
         $user = $this->userService->registerUser($request->all());
 
-        $token = $user->createToken('YoutubeTutorial')->accessToken;
+        if ($user) {
+            Mail::to($user->email)->send(new RegisterUserMail($user));
+            return $this->responseHelper->successResponse(true,'Register Email Sent', $user);
+        }
 
-        return response()->json([
-            'data' => [
-                'success' => true,
-                'user' => $user,
-                'token' => $token
-            ]
-        ]);
+        return $this->responseHelper->errorResponse(false,'No user created' ,404);
     }
 
     /**
