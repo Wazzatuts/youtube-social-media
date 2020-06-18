@@ -3,6 +3,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Contracts\UserActivationTokenRepositoryContract;
+use App\Repositories\UserActivationTokenRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\StatusUpdateRepository;
@@ -20,6 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserRepositoryContract::class, UserRepository::class);
         $this->app->bind(StatusUpdateRepositoryContract::class, StatusUpdateRepository::class);
+        $this->app->bind(UserActivationTokenRepositoryContract::class, UserActivationTokenRepository::class);
     }
 
 }
