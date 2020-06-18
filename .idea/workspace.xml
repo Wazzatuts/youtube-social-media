@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d856b20b-5cfd-439a-9430-04f63300fc5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/mail/register_user.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/UserActivationTokenRepositoryContract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/UserActivationTokenRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/UserActivationTokenService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/RegisterUserMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/RegisterUserMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mail/register_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mail/register_user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,6 +208,7 @@
       <workItem from="1592164200219" duration="1629000" />
       <workItem from="1592210659209" duration="1653000" />
       <workItem from="1592213774631" duration="6961000" />
+      <workItem from="1592510095590" duration="2728000" />
     </task>
     <servers />
   </component>

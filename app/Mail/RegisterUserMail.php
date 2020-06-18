@@ -11,15 +11,24 @@ class RegisterUserMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    /**
+     * @var
+     */
     protected $user;
     /**
-     * Create a new message instance.
-     *
-     * @return void
+     * @var
      */
-    public function __construct($user)
+    protected $token;
+
+    /**
+     * RegisterUserMail constructor.
+     * @param $user
+     * @param $token
+     */
+    public function __construct($user, $token)
     {
         $this->user = $user;
+        $this->token = $token;
     }
 
     /**
@@ -29,8 +38,10 @@ class RegisterUserMail extends Mailable
      */
     public function build()
     {
+        $url = url('api/users/activate_email/' . $this->token);
         return $this->from('wazza@youtube.com')->view('mail.register_user')->with([
-            'name' => $this->user->name
+            'name' => $this->user->name,
+            'url' => $url
         ]);
     }
 }

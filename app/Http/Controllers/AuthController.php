@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\ResponseHelper;
 use App\Mail\RegisterUserMail;
+use App\Services\UserActivationTokenService;
 use App\Services\UserService;
 use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
@@ -21,16 +22,22 @@ class AuthController extends Controller
      * @var ResponseHelper
      */
     protected $responseHelper;
+    /**
+     * @var UserActivationTokenService
+     */
+    protected $userActivationTokenService;
 
     /**
      * AuthController constructor.
      * @param UserService $userService
      * @param ResponseHelper $responseHelper
+     * @param UserActivationTokenService $userActivationTokenService
      */
-    public function __construct(UserService $userService, ResponseHelper $responseHelper)
+    public function __construct(UserService $userService, ResponseHelper $responseHelper, UserActivationTokenService $userActivationTokenService)
     {
         $this->userService = $userService;
         $this->responseHelper = $responseHelper;
+        $this->userActivationTokenService = $userActivationTokenService;
     }
 
     /**
@@ -42,7 +49,8 @@ class AuthController extends Controller
         $user = $this->userService->registerUser($request->all());
 
         if ($user) {
-            Mail::to($user->email)->send(new RegisterUserMail($user));
+            $token = $this->userActivationTokenService->createNewToken($user->id);
+            Mail::to($user->email)->send(new RegisterUserMail($user, $token->token));
             return $this->responseHelper->successResponse(true,'Register Email Sent', $user);
         }
 
