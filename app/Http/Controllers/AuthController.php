@@ -51,10 +51,10 @@ class AuthController extends Controller
         if ($user) {
             $token = $this->userActivationTokenService->createNewToken($user->id);
             Mail::to($user->email)->send(new RegisterUserMail($user, $token->token));
-            return $this->responseHelper->successResponse(true,'Register Email Sent', $user);
+            return $this->responseHelper->successResponse(true, 'Register Email Sent', $user);
         }
 
-        return $this->responseHelper->errorResponse(false,'No user created' ,404);
+        return $this->responseHelper->errorResponse(false, 'No user created', 404);
     }
 
     /**
@@ -87,5 +87,12 @@ class AuthController extends Controller
         $user = Auth::user();
 
         return $this->responseHelper->successResponse(true, 'User', $user);
+    }
+
+    public function activateEmail($code)
+    {
+        $checkToken = $this->userActivationTokenService->checkToken($code);
+
+        return $this->responseHelper->successResponse(true, "Activate Email", $checkToken);
     }
 }
