@@ -63,6 +63,12 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
+        $checkActivated = $this->userService->checkUserIsActivated($request->email);
+
+        if (!$checkActivated) {
+            return $this->responseHelper->errorResponse(false, 'User Needs To Activate Account', 401);
+        }
+
         $newUser = $this->userService->loginUser($request->all());
 
         if ($newUser) {
