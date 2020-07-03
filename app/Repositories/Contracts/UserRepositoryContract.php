@@ -18,4 +18,10 @@ interface UserRepositoryContract
      */
     public function activateUser(int $userId);
 
+    /**
+     * @param $email
+     * @return mixed
+     */
+    public function checkIfUserExistsViaEmail($email);
+
 }

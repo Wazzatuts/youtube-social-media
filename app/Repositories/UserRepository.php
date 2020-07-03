@@ -36,4 +36,15 @@ class UserRepository implements UserRepositoryContract
         }
     }
 
+    public function checkIfUserExistsViaEmail($email)
+    {
+        try {
+            $user = User::where(['email'=> $email])->first();
+
+            return $user;
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
 }

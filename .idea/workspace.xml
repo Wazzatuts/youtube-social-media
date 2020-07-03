@@ -4,11 +4,9 @@
     <list default="true" id="d856b20b-5cfd-439a-9430-04f63300fc5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/UserActivationTokenRepositoryContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/UserActivationTokenRepositoryContract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Contracts/UserRepositoryContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Contracts/UserRepositoryContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/UserActivationTokenRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/UserActivationTokenRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/UserActivationTokenService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/UserActivationTokenService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/UserService.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,6 +207,8 @@
       <workItem from="1592510095590" duration="2728000" />
       <workItem from="1592564036295" duration="1303000" />
       <workItem from="1593630485691" duration="1933000" />
+      <workItem from="1593678379833" duration="14000" />
+      <workItem from="1593717831344" duration="1519000" />
     </task>
     <servers />
   </component>
