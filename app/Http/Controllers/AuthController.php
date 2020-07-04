@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\ResponseHelper;
 use App\Mail\RegisterUserMail;
+use App\Services\PasswordResetService;
 use App\Services\UserActivationTokenService;
 use App\Services\UserService;
 use App\Http\Requests\RegisterUserRequest;
@@ -28,16 +29,28 @@ class AuthController extends Controller
     protected $userActivationTokenService;
 
     /**
+     * @var PasswordResetService
+     */
+    protected $passwordResetService;
+
+    /**
      * AuthController constructor.
      * @param UserService $userService
      * @param ResponseHelper $responseHelper
      * @param UserActivationTokenService $userActivationTokenService
+     * @param PasswordResetService $passwordResetService
      */
-    public function __construct(UserService $userService, ResponseHelper $responseHelper, UserActivationTokenService $userActivationTokenService)
+    public function __construct(
+        UserService $userService,
+        ResponseHelper $responseHelper,
+        UserActivationTokenService $userActivationTokenService,
+        PasswordResetService $passwordResetService
+    )
     {
         $this->userService = $userService;
         $this->responseHelper = $responseHelper;
         $this->userActivationTokenService = $userActivationTokenService;
+        $this->passwordResetService = $passwordResetService;
     }
 
     /**
@@ -100,5 +113,19 @@ class AuthController extends Controller
         $checkToken = $this->userActivationTokenService->checkToken($code);
 
         return $this->responseHelper->successResponse(true, "Activate Email", $checkToken);
+    }
+
+    public function forgotPasswordCreate(Request $request)
+    {
+        $checkUserEmail = $this->userService->checkEmail($request->email);
+
+        if (!$checkUserEmail) {
+            return $this->responseHelper->errorResponse(false,"User Email doesnt Exist", 401);
+        }
+
+        $createPasswordReset = $this->passwordResetService->createPasswordReset($request->email);
+
+        return $this->responseHelper->successResponse(true, "password reset sent",$createPasswordReset);
+
     }
 }

@@ -23,5 +23,4 @@ interface UserRepositoryContract
      * @return mixed
      */
     public function checkIfUserExistsViaEmail($email);
-
 }
