@@ -24,6 +24,9 @@ Route::group([
     Route::post('activate_email/{code}', 'AuthController@activateEmail');
 
     Route::post('forgotPasswordCreate', 'AuthController@forgotPasswordCreate');
+    Route::get('forgotPassword/{token}', 'AuthController@forgotPasswordToken');
+
+
     Route::group([
         'middleware' => 'auth:api'
     ], function () {

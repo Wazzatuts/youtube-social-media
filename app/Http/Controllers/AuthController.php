@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ResponseHelper;
+use App\Mail\FogottenPasswordMail;
 use App\Mail\RegisterUserMail;
 use App\Services\PasswordResetService;
 use App\Services\UserActivationTokenService;
@@ -120,12 +121,14 @@ class AuthController extends Controller
         $checkUserEmail = $this->userService->checkEmail($request->email);
 
         if (!$checkUserEmail) {
-            return $this->responseHelper->errorResponse(false,"User Email doesnt Exist", 401);
+            return $this->responseHelper->errorResponse(false, "User Email doesnt Exist", 401);
         }
 
-        $createPasswordReset = $this->passwordResetService->createPasswordReset($request->email);
+        $passwordResetData = $this->passwordResetService->createPasswordReset($request->email);
+        Mail::to($request->email)->send(new FogottenPasswordMail($passwordResetData));
 
-        return $this->responseHelper->successResponse(true, "password reset sent",$createPasswordReset);
+
+        return $this->responseHelper->successResponse(true, "password reset sent", $passwordResetData);
 
     }
 }
