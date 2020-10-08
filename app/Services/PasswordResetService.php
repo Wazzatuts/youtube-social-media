@@ -5,8 +5,6 @@ namespace App\Services;
 
 
 use App\Repositories\Contracts\PasswordResetRepositoryContract;
-use App\Repositories\Contracts\StatusUpdateRepositoryContract;
-use Illuminate\Support\Facades\Auth;
 
 class PasswordResetService
 {
@@ -27,6 +25,11 @@ class PasswordResetService
     public function createPasswordReset($email)
     {
         return $this->passwordResetRepositoryContract->createPasswordReset($email);
+    }
+
+    public function checkReset($email, $token)
+    {
+        return $this->passwordResetRepositoryContract->checkReset($email, $token);
     }
 
 

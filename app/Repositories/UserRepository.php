@@ -47,4 +47,9 @@ class UserRepository implements UserRepositoryContract
         }
     }
 
+    public function getUserByEmail($email)
+    {
+        return User::where(['email'=> $email])->first();
+    }
+
 }

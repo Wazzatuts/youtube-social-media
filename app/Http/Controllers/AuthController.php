@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ResponseHelper;
+use App\Http\Requests\RegisterUserRequest;
 use App\Mail\FogottenPasswordMail;
 use App\Mail\RegisterUserMail;
 use App\Services\PasswordResetService;
 use App\Services\UserActivationTokenService;
 use App\Services\UserService;
-use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -129,6 +129,31 @@ class AuthController extends Controller
 
 
         return $this->responseHelper->successResponse(true, "password reset sent", $passwordResetData);
+
+    }
+
+    public function forgotPasswordToken(Request $request, $token)
+    {
+        $checkToken = $this->passwordResetService->checkReset($request->email, $token);
+
+        if (!$checkToken) {
+            return $this->responseHelper->errorResponse(false, "Details dont match", 400);
+        }
+
+        $user = $this->userService->getUserByEmail($request->email);
+
+        if (!$user) {
+            return $this->responseHelper->errorResponse(false, "User not found", 400);
+        }
+
+        // homework put into services
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        // homework put into services
+        $checkToken->delete();
+
+        return $this->responseHelper->successResponse(true, "password reset complete", $user);
 
     }
 }
