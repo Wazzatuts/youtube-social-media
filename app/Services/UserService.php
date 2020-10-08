@@ -60,4 +60,9 @@ class UserService
         return false;
     }
 
+    public function getUserByEmail($email)
+    {
+        return $this->userRepositoryContract->getUserByEmail($email);
+    }
+
 }
