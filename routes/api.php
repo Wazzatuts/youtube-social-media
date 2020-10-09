@@ -40,4 +40,5 @@ Route::group([
 ], function () {
     Route::get('me', 'UserController@me');
     Route::post('status/new', 'StatusUpdatesController@store');
+    Route::post('image-upload', 'UserImageController@store');
 });
