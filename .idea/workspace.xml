@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d856b20b-5cfd-439a-9430-04f63300fc5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UserImageUploadRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/ImageUploadRepositoryContract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/ImageUploadRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/ImageUploadService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +147,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories/Contracts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -153,11 +158,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Http\Requests" />
-      <recent name="C:\Users\Wayne\Youtube-Social\laravel\resources\views\mail" />
-      <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Mail" />
       <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Repositories\Contracts" />
       <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Repositories" />
+      <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Services" />
+      <recent name="C:\Users\Wayne\Youtube-Social\laravel\app\Http\Requests" />
+      <recent name="C:\Users\Wayne\Youtube-Social\laravel\resources\views\mail" />
     </key>
   </component>
   <component name="RunDashboard">
