@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d856b20b-5cfd-439a-9430-04f63300fc5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Contracts/ImageUploadRepositoryContract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/ImageUploadRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/ImageUploadService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserImageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UserFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UserFile.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -223,6 +219,7 @@
       <workItem from="1602184702866" duration="2879000" />
       <workItem from="1602231028412" duration="1103000" />
       <workItem from="1602269882599" duration="2742000" />
+      <workItem from="1602441448443" duration="1958000" />
     </task>
     <servers />
   </component>

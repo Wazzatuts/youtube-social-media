@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Laravel\Passport\HasApiTokens;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -41,5 +40,20 @@ class User extends Authenticatable
     public function status_updates()
     {
         return $this->hasMany(StatusUpdate::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(UserFile::class);
+    }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'images' => $this->images,
+        ];
     }
 }
