@@ -41,5 +41,6 @@ Route::group([
     Route::get('me', 'UserController@me');
     Route::post('status/new', 'StatusUpdatesController@store');
     Route::post('image-upload', 'UserImageController@store');
-    Route::get('addFriend/{id}', 'UserController@addFriend');
+    Route::get('addFriend/{id}', 'UserController@toggleFriend');
+    Route::get('getFriends', 'UserController@getFriends');
 });
