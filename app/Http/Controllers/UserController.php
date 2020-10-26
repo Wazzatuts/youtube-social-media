@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ResponseHelper;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -22,7 +23,7 @@ class UserController extends Controller
     }
 
     /**
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function me()
     {
@@ -32,20 +33,30 @@ class UserController extends Controller
         return $this->responseHelper->successResponse(true, 'Here is the the user', $user);
     }
 
-    public function addFriend($id)
+    /**
+     * @param $id
+     * @return JsonResponse
+     */
+    public function toggleFriend($id)
     {
-        // Add friend
+        $userFriends = auth()->user()->friends();
 
-//        $addUser = auth()->user()->friends()->attach([20,21,22,23]);
+        if ($userFriends->find($id)) {
+            $userFriends->detach([$id]);
+            return $this->responseHelper->successResponse(true, 'Removed Friend', []);
+        }
 
-        // Remove Friend
+        $userFriends->attach($id);
 
-//        $removeFriends = auth()->user()->friends()->detach([$id]);
+        return $this->responseHelper->successResponse(true, 'Added Friend', []);
+    }
 
-        //Sync Friends
-        $removeFriends = auth()->user()->friends()->sync([$id]);
-
-
-        return $this->responseHelper->successResponse(true, 'Added User', []);
+    /**
+     * @return JsonResponse
+     */
+    public function getFriends()
+    {
+        $userFriends = auth()->user()->friends()->get();
+        return $this->responseHelper->successResponse(true, 'All Friends', $userFriends);
     }
 }
